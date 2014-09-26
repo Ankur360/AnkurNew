@@ -18,4 +18,4 @@ dependencies:
 ## Customize test commands
 test:
   override:
-    - rspec LiveCubeAutomation/scripts/TestCreateMeeting.rb
+    - rspec LiveCubeAutomation25092014/scripts/TestCreateMeeting.rb
