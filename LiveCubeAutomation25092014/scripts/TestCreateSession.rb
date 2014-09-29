@@ -45,6 +45,9 @@ describe "Scenario test create session" do
       login.loginToOrganizerApp(@OrgEmail,@OrgPass)
       meetingName= "Automation Meeting"
       dashboard.createSession(meetingName)
+      #verify that even created successfuly
+      successMsg= dashboard.verifyEventCreated()
+      expect(successMsg).to include("Event was successfully created.")
 
      rescue
       #update and generate report for test

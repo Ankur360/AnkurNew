@@ -46,8 +46,16 @@ describe "Scenario test create meeting" do
 
       #login into Organizer Application
       login.loginToOrganizerApp(@OrgEmail,@OrgPass)
+      logButton= login.logoutButtonDisplayed()
+      expect(logButton).to eql(true)
       dashboard.createMeeting()
-
+      num= 12
+      expect(num).to equal(12)
+      puts "After the assertion"
+      message= dashboard.verifyMeetingCreated()
+      #expect(message).to eq("Meeting was successfully created.")
+      expect(message).to include("Meeting was successfully created.")
+      #expect(message).to equal("Meeting was successfully created.")
     rescue
       CreateLog.new().Log("open application url")
     raise

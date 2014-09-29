@@ -45,7 +45,18 @@ describe "Scenario test create team" do
       login.loginToOrganizerApp(@OrgEmail,@OrgPass)
       meetingName= "Automation Meeting"
       dashboard.clickOnMeeting(meetingName)
+      #verify team deleted
+      temaName="Automation Meeting"
+      editLiveCube.deleteTeamIfExist(temaName)
+      result=editLiveCube.verifyTeamNotExist(temaName)
+      expect(result).to eql(false)
+
+      #verify team created
       editLiveCube.testCreateTeam()
+      #verify team created
+      succesMsg=editLiveCube.verifyTeamCreated()
+      expect(succesMsg).to include("Team was successfully created.")
+
 
      rescue
       #update and generate report for test

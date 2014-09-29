@@ -45,7 +45,16 @@ describe "Scenario test create speaker" do
 
       #login into Organizer Application
       login.loginToOrganizerApp(@OrgEmail,@OrgPass)
+      #delete speaker if exist
+      dashboard.deleteSpeaker()
+      speakerName= "TestAutomationSpeaker"
+      speakerExist= dashboard.verifySpeakerDeleted(speakerName)
+      expect(speakerExist).to eql(false)
+      #create speaker
       dashboard.createSpeaker()
+      #verify that speaker created
+      successMsg= dashboard.verifySpeakerCreated()
+      expect(successMsg).to include("Speaker was successfully created.")
   end    
   
 end

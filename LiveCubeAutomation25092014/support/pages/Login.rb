@@ -11,17 +11,22 @@ class Login < SupportHelper
     #login into organizer application
     def loginToOrganizerApp(emailAddress,password)
     #After launching the browser verify that user landed on login screen
-    verifyLoginForm()
+    #verifyLoginForm()
     enterEmail(emailAddress)
     enterPassword(password)
     clickOnSignIn()
     #Verify that user login into the application successfully
-    logoutButtonDisplayed()
+    #logoutButtonDisplayed()
+    end
+
+    def verifyLoginFormAfterOpenURL()
+      verifyLoginForm()
     end
 
     #verify organizer login form
     def verifyLoginForm
-      assert element_present?(:class, "organizer-form")
+      result= element_present?(:class, "organizer-form")
+      result
     end
 
     #Enter organizer email address
@@ -46,8 +51,12 @@ class Login < SupportHelper
 
     #verify logout button is shown
     def logoutButtonDisplayed()
-      assert element_present?(:class, "indicator-connection")
+      #assert element_present?(:class, "indicator-connection")
+      result= element_present?(:class, "indicator-connection")
+      result
     end
+
+
 
     #verify that signEvent label is shown
     def verifySignEventLabel
