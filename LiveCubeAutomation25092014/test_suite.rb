@@ -18,12 +18,12 @@ require path+"/Scripts/TestPostMessage.rb"
 require path+"/Scripts/TestRePostFavorite.rb"
 require path+"/Scripts/TestRateSession.rb"
 require path+"/Scripts/TestFlagAndReply.rb"
-require path+"/Scripts/TestRecentPopularSorting.rb"
-require path+"/Scripts/TestAttendeesAndSpeaker.rb"
-require path+"/Scripts/TestVerifyInformation.rb"
-require path+"/Scripts/TestVerifyUserActivity.rb"
-require path+"/Scripts/TestUpdateUserProfile.rb"
-require path+"/Scripts/TestRemovePost.rb"
+#require path+"/Scripts/TestRecentPopularSorting.rb"
+#require path+"/Scripts/TestAttendeesAndSpeaker.rb"
+#require path+"/Scripts/TestVerifyInformation.rb"
+#require path+"/Scripts/TestVerifyUserActivity.rb"
+#require path+"/Scripts/TestUpdateUserProfile.rb"
+#require path+"/Scripts/TestRemovePost.rb"
 
 
 

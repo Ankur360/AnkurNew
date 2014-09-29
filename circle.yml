@@ -1,21 +1,10 @@
-## Customize dependencies
-dependencies:
-  pre:
-    - gem install rails
-    - gem install rubyzip 
-    - gem install ffi
-    - gem install websocket
-    - gem install bundler --pre
-    - gem install parseconfig
-    - gem install minitest -v '4.7.5'
-
-  override:
-    - bundle config build.nokogiri --use-system-libraries
-    - bundle install: # note ':' here
-        timeout: 180 # fail if command has no output for 3 minutes
-
 
 ## Customize test commands
 test:
   override:
-    - rspec LiveCubeAutomation25092014/scripts/TestCreateMeeting.rb
+    - rspec --format html --out reports/reports.html test_suite.rb # use PHPunit for testing
+
+
+  post:
+    - rspec --format html --out reports/reports.html scripts/test_suite.rb
+	
