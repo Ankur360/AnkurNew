@@ -2,8 +2,8 @@
 ## Customize test commands
 test:
   override:
-    - rspec --format html --out reports/reports.html scripts/test_suite.rb # use PHPunit for testing
+    - rspec --format html --out reports/reports.html test_suite.rb # use PHPunit for testing
 
   post:
-    - rspec --format html --out reports/reports.html scripts/test_suite.rb
+    - rspec --format html --out reports/reports.html test_suite.rb
 	
