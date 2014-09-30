@@ -16,9 +16,10 @@ require path+"/support_helper.rb"
       enterTwitterPassword(password)
       clickSignIn()
       clickOnAuthorize()
-      verifyTeamDisplayed()
+      team= verifyTeamDisplayed()
       clickOnTeam()
-      verifyUserLoggedIn()
+      logout= verifyUserLoggedIn()
+      return [team, logout]
     end
 
     # click Sign Into your Event button
@@ -69,7 +70,7 @@ require path+"/support_helper.rb"
    def verifyTeamDisplayed()
      el= @driver.find_element(:xpath, "//h3[text()='Automation Team']")
      teamName= el.text
-     assert_equal teamName, "Automation Team"
+    # assert_equal teamName, "Automation Team"
    end
 
    #click on team
@@ -94,6 +95,6 @@ require path+"/support_helper.rb"
 
    def verifyUserLoggedIn
      el=@driver.find_element(:css, "a.x-btn-show-me").displayed?
-     assert_equal el,true, "User should be logged in livecube application"
+    # assert_equal el,true, "User should be logged in livecube application"
    end
 end

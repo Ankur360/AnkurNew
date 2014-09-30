@@ -15,9 +15,10 @@ class LoginLiveCubeFirstTimeEmail < SupportHelper
     enterDesiredPassword(desiredPass)
     #enterFullName(fullName)
     clickSignIn()
-    verifyTeamDisplayed()
+    team= verifyTeamDisplayed()
     clickOnTeam()
-    verifyUserLoggedIn()
+    logout = verifyUserLoggedIn()
+    return [team, logout]
   end
 
   # click Sign Into your Event button
@@ -68,7 +69,8 @@ class LoginLiveCubeFirstTimeEmail < SupportHelper
   def verifyTeamDisplayed()
     el= @driver.find_element(:xpath, "//h3[text()='Automation Team']")
     teamName= el.text
-    assert_equal teamName, "Automation Team"
+   # assert_equal teamName, "Automation Team"
+    teamName
   end
 
   def clickOnTeam()
@@ -92,7 +94,8 @@ class LoginLiveCubeFirstTimeEmail < SupportHelper
   #verify user logged into the live cube application
   def verifyUserLoggedIn
     el=@driver.find_element(:css, "a.x-btn-show-me").displayed?
-    assert_equal el,true, "User should be logged in livecube application"
+    #assert_equal el,true, "User should be logged in livecube application"
+    el
   end
 end
 

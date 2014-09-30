@@ -7,9 +7,12 @@ require "selenium-webdriver"
 require "rspec"
 
 class DriverHelper
-    
-   
-	 def readAttendeesUrl()
+
+  def initialize(driver)
+    @driver = driver
+  end
+
+  def readAttendeesUrl()
     url=""
     f = File.open("attendeesUrl.txt", "r")
     f.each_line do |line|
